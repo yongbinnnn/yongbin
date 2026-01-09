@@ -2,12 +2,12 @@
 
 int main(void)
 {
-    int a;
-    scanf("%d", &a);
+    int n;
+    scanf("%d", &n);
     
-    for(int i = 0; i < a; i++)
+    for(int i = 0; i < n; i++)
     {
-        for(int j = i; j < a-1; j++)
+        for(int j = i; j < n-1; j++)
         {
             printf(" ");
         }
