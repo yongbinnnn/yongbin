@@ -1,30 +1,28 @@
 #include <stdio.h>
 
+int max(int a, int b);
+int min(int a, int b);
+
 int main(void)
 {
-    int numbers[3], i, j, tmp;
-    for(i = 0; i < 3; i++)
-    {
-        scanf("%d", &numbers[i]);
-    }
-    
-    for(i = 0; i < 3-1; i++)
-    {
-        for(j = i+1; j < 3; j++)
-        {
-            if(numbers[i] > numbers[j])
-            {
-                tmp = numbers[i];
-                numbers[i] = numbers[j];
-                numbers[j] = tmp;
-            }
-        }
-    }
-    
-    for(i = 0; i < 3; i++)
-    {
-        printf("%d ", numbers[i]);
-    }
+    int a,b,c;
+    scanf("%d %d %d", &a, &b, &c);
+    printf("%d %d %d", min(min(a, b), c), a+b+c-max(max(a, b), c)-min(min(a, b), c), max(max(a, b), c));
     
     return 0;
+}
+
+int max(int a, int b)
+{
+    if(a > b) a = a;
+    else a = b;
+    
+    return a;
+}
+int min(int a, int b)
+{
+    if(a < b) a = a;
+    else a = b;
+    
+    return a;
 }
